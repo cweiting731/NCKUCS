@@ -30,6 +30,10 @@
         {
             this.menu = new System.Windows.Forms.MenuStrip();
             this.儲存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenFileItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenNewItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveNewItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveItem = new System.Windows.Forms.ToolStripMenuItem();
             this.文字ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BoldItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItalicsItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,15 +55,49 @@
             this.文字ToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1113, 40);
+            this.menu.Size = new System.Drawing.Size(1113, 38);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
             // 儲存ToolStripMenuItem
             // 
+            this.儲存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenFileItem,
+            this.OpenNewItem,
+            this.SaveNewItem,
+            this.SaveItem});
             this.儲存ToolStripMenuItem.Name = "儲存ToolStripMenuItem";
             this.儲存ToolStripMenuItem.Size = new System.Drawing.Size(77, 34);
-            this.儲存ToolStripMenuItem.Text = "儲存";
+            this.儲存ToolStripMenuItem.Text = "檔案";
+            // 
+            // OpenFileItem
+            // 
+            this.OpenFileItem.Name = "OpenFileItem";
+            this.OpenFileItem.Size = new System.Drawing.Size(249, 38);
+            this.OpenFileItem.Text = "開啟";
+            this.OpenFileItem.Click += new System.EventHandler(this.OpenFileItem_Click);
+            // 
+            // OpenNewItem
+            // 
+            this.OpenNewItem.Name = "OpenNewItem";
+            this.OpenNewItem.Size = new System.Drawing.Size(270, 38);
+            this.OpenNewItem.Text = "新增檔案";
+            this.OpenNewItem.Click += new System.EventHandler(this.OpenNewItem_Click);
+            // 
+            // SaveNewItem
+            // 
+            this.SaveNewItem.Name = "SaveNewItem";
+            this.SaveNewItem.Size = new System.Drawing.Size(249, 38);
+            this.SaveNewItem.Text = "另存新檔";
+            this.SaveNewItem.Click += new System.EventHandler(this.SaveNewItem_Click);
+            // 
+            // SaveItem
+            // 
+            this.SaveItem.Name = "SaveItem";
+            this.SaveItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.SaveItem.Size = new System.Drawing.Size(249, 38);
+            this.SaveItem.Text = "儲存";
+            this.SaveItem.Click += new System.EventHandler(this.SaveItem_Click);
             // 
             // 文字ToolStripMenuItem
             // 
@@ -110,6 +148,7 @@
             this.textPlace.Size = new System.Drawing.Size(1113, 565);
             this.textPlace.TabIndex = 1;
             this.textPlace.Text = "";
+            this.textPlace.TextChanged += new System.EventHandler(this.textPlace_TextChanged);
             // 
             // labelInfo
             // 
@@ -163,5 +202,9 @@
         private System.Windows.Forms.ToolStripMenuItem ColorItem;
         private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Button btnAutoSave;
+        private System.Windows.Forms.ToolStripMenuItem OpenFileItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveNewItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenNewItem;
     }
 }

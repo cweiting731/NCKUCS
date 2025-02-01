@@ -39,11 +39,12 @@ namespace NCKUCS
 
         private void scraptBook_Click(object sender, EventArgs e)
         {
-            if (book  == null || book.IsDisposed)
+            if (book == null || book.IsDisposed)
             {
                 book = new ScraptBook();
             }
             book.Show();
         }
+
     }
 }

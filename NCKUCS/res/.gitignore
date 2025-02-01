@@ -1,0 +1,3 @@
+# 這個 .gitignore 只是為了讓 Git 保留這個空資料夾
+*
+!.gitignore
